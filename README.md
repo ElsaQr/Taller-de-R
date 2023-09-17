@@ -74,3 +74,8 @@ PARTE II
          Corregir errores y probar,
        
 
+   **5. Temas Especiales**
+
+   Mario Gutiérrez. Introducción a Redes Booleanas: Morfogénesis Floral en Arabidopsis. Leer Álvarez-Buylla et al. 2008 "*Floral morphogenesis: stochastic explorations of a gene network epigenetic landscape*" (10.1371/journal.pone.0003626)  
+  
+   Elsa Quezada. 
