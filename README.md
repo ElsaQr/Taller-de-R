@@ -1,70 +1,76 @@
 # Taller de R para principiantes
 Para estudiantes de Agronomía de la UAM-X y estudiantes de licenciatura en el Instituto de Ecología UNAM
 
-## Contents
+## Contenidos
 
-**Installation of R**
+**Instalación de R**
 
-**1.	Introduction**
-	
-  1.1.	command line  
-  1.2.	Recording your work  
-  1.3.	calculating with R  
-  1.4.	named storage  
-  1.5.	Functions  
-  1.6.	Exact or approximate?  
-  1.7.	R is case-sensitive  
-  1.8.	Listing the objects in the workspace  
-  1.9.	Vectors  
-  1.10.	Extracting elements from vectors  
-  1.11.	Vector arithmetic  
-  1.12.	Simple patterned vector  
-  1.13.	Missing values and other special values  
-  1.14.	Character vectors  
-  1.15.	Factors  
-  1.16.	More on extracting elements from vectors  
-  1.17.	Matrices and arrays  
-  1.18.	data frames  
-  1.19.	Data and times
+**1. Introducción**
+PARTE I
 
-**2.	Data input and out put**  
+   línea de comando
+   Grabando tu trabajo
+   Calculando con R
+   Almacenamiento con nombre
+   Funciones
+   Exacta o aproximada?
+   R distingue entre mayúsculas y minúsculas
+   Listado de los objetos en el espacio de trabajo.
+   Vectores
+   Extrayendo elementos de vectores
+   
+PARTE II
 
-  2.1.	changing directories  
-  2.2.	dump() and source()  
-  2.3.	Redirecting R output  
-  2.4.	Saving and retrieving image files  
-  2.5.	Data frames and the read.table function  
-  2.6.	List
+   Aritmética vectorial
+   Vector estampado simple
+   Valores faltantes y otros valores especiales
+   Vectores de caracteres
+   Factores
+   Más sobre la extracción de elementos de vectores
+   Matrices y arreglos
+   Marcos de datos
+   Datos y tiempos
+
+**2. Entrada y salida de datos**
+
+PARTE I
+
+   Cambiar directorios
+   Volcado() y fuente()
+   Redirigir la salida de R
+   
+PARTE II
+
+   Guardar y recuperar archivos de imagen
+   Marcos de datos y la función read.table
+   Lista
     
-**3.	Programming statistical graphics**
+**3. Programación de gráficos estadísticos**
 
-  3.1.	Bar charts  
-  3.2.	Dot charts  
-  3.3.	pie charts  
-  3.4.	Histograms  
-  3.5.	Box plots  
-  3.6.	Scatterplots  
-  3.7.	QQplot  
-  3.8.	The plotting region and margins  
-  3.9.	Adding to plots  
-  3.10.	Setting graphical parameter
+   Gráfica de barras
+   Gráficos de puntos
+   Gráficos circulares
+   Histogramas
+   Diagramas de caja
+   Gráfico de dispersión
+   QQplot
+   La región de trazado y los márgenes.
+   Agregar plots
+   Configuración de parámetros gráficos
     
-**4.	Programming with R**
+**4. Programación con R**
 
-  4.1.	Flow control  
-        4.1.1.	the for() loop  
-        4.1.2.	the if () statement  
-        4.1.3.	the while() loop  
-        4.1.4.	The repeat loop  
-        4.1.5.	break and next statements  
-        4.1.6.	use fix()  
-        4.1.7.	Documentation using #  
-        4.1.8.	recognizing that a bug exists  
-        4.1.9.	Make the bug reproducible  
-        4.1.10.	identify the cause of the bug  
-        4.1.11.	fixing errors and testing   
-        4.1.12.	look for similar errors elsewhere  
-        4.1.13.	the browser()  
-        4.1.14.	the bug()  
-
+   Control de flujo
+         el bucle for()
+         la declaración if ()
+         el bucle while()
+         El bucle de repetición
+         Pausa y declaraciones siguientes
+         Utilizar arreglar()
+         Documentación usando #
+         Reconocer que existe un error
+         Hacer que el error sea reproducible
+         Identificar la causa del error
+         Corregir errores y probar  
+       
 
