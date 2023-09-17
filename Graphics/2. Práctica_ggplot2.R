@@ -233,7 +233,7 @@ ggplot(data= iris, aes(x= Petal.Length, y= Petal.Width, shape=Species, colour=Sp
   geom_point() +
   scale_shape_manual(values=c(1,2,3)) +
   scale_colour_manual(values=c("deepskyblue", "seagreen2", "salmon")) +
-  labs(title= "Taller ggplot RMB", y= "Petal Width (cm)", x= "Petal Length (cm)", fill= "") +
+  labs(title= "Taller R", y= "Petal Width (cm)", x= "Petal Length (cm)", fill= "") +
   theme_bw() +
   theme(legend.position="bottom")
   
@@ -283,12 +283,12 @@ ggplot(iris) +
   aes(x = Sepal.Length, fill = Species) +
   geom_density(adjust = 1L) +
   scale_fill_viridis_d(option = "viridis") +
-  labs(x = "Densidad", title = "Gráfico de Densidad ", subtitle = "Taller ggplot RMB") +
+  labs(x = "Densidad", title = "Gráfico de Densidad ", subtitle = "Taller R") +
   theme_minimal()
 
 ggplot(iris) +
   aes(x = Sepal.Length, fill = Species) +
   geom_density(adjust = 1L) +
   scale_fill_viridis_d(option = "viridis") +
-  labs(x = "Densidad", title = "Gráfico de Densidad ", subtitle = "Taller ggplot RMB") +
+  labs(x = "Densidad", title = "Gráfico de Densidad ", subtitle = "Taller R") +
   theme_minimal()
