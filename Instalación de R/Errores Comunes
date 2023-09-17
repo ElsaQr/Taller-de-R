@@ -1,0 +1,15 @@
+###################### Errores comunes para la instalación de R y librerias de R############
+
+#Errores en la instalación en Windows##################################
+#Errores en la instalación en Linux####################################
+#Errores en la instalación en MacOS####################################
+
+
+
+######################Errores en la instalación de librerias ###############################
+ 
+1.-Cuando no hay permisos necesarios 
+  Ejemplo. En windows https://support.microsoft.com/es-es/topic/problema-general-instalar-cualquier-paquete-r-0bf1f9ba-ead2-6335-46ec-190f6af75e44
+
+###############################################
+
