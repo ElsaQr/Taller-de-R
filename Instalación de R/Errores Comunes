@@ -1,5 +1,10 @@
 ###################### Errores comunes para la instalación de R y librerias de R############
 
+#Errores de instalación en General 
+
+https://brouwern.github.io/getRdone/troubleshooting-r-rstudio-installation.html
+https://brouwern.github.io/getRdone/problems-getting-r-and-rstudio-up-and-running.html
+
 #Errores en la instalación en Windows##################################
 #Errores en la instalación en Linux####################################
 #Errores en la instalación en MacOS####################################
@@ -10,6 +15,30 @@
  
 1.-Cuando no hay permisos necesarios 
   Ejemplo. En windows https://support.microsoft.com/es-es/topic/problema-general-instalar-cualquier-paquete-r-0bf1f9ba-ead2-6335-46ec-190f6af75e44
+2.- Mensajes de advertencia - Warning messages
+Aparecen en texto rojo, aun saliendo un mensaje rojo podria correr la función
+3.- Mensaje de ERROR 
+Los mensajes de error suelen estar acompañados de información sobre el rerror
+4.- CRASHES - accidentes
 
-###############################################
+
+
+
+######################Errores comunes en R###################################################
+1. Paréntesis, llaves, corchetes o comillas incomparables
+2. Usar una función que no está instalada o cargada
+3. Errores tipográficos en los nombres de funciones, variables, conjuntos de datos, objetos o paquetes
+4. Argumentos faltantes, incorrectos o mal escritos en funciones
+5. Tipos de datos incorrectos, inapropiados o inconsistentes
+6. Olvidar el signo + en ggplot2
+7. Malentendido entre = y ==
+8. Columnas no definidas seleccionadas
+9. Problema al importar o utilizar el archivo de datos incorrecto
+10. Problema al usar el operador $
+11.- Mensajes de advertencia - Warning messages
+Aparecen en texto rojo, aun saliendo un mensaje rojo podria correr la función
+12.- Mensaje de ERROR 
+Los mensajes de error suelen estar acompañados de información sobre el rerror
+13.- CRASHES - accidentes
+
 
