@@ -56,7 +56,7 @@ PARTE II
    QQplot,
    La región de trazado y los márgenes,
    Agregar plots,
-   Configuración de parámetros gráficos,
+   Configuración de parámetros gráficos
     
 **4. Programación con R**
 
@@ -78,4 +78,5 @@ PARTE II
 
    Mario Gutiérrez. Introducción a Redes Booleanas: Morfogénesis Floral en Arabidopsis. Leer Álvarez-Buylla et al. 2008 "*Floral morphogenesis: stochastic explorations of a gene network epigenetic landscape*" (10.1371/journal.pone.0003626)  
   
-   Elsa Quezada. 
+   Elsa Quezada.  Estudio de Secuencias biológicas mediante " MultiDimensional Scaling " con proyección de datos complementarios.
+   Ejemplo de uso de "MultiDimensional Scaling" en proteinas de plantas https://www.mdpi.com/2223-7747/10/12/2619 
