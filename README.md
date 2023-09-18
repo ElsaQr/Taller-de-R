@@ -60,12 +60,11 @@ PARTE II
 **4. Programación con R**
 
    Control de flujo
-         el bucle for(),
+          for() loop,
          la declaración if (),
          el bucle while(),
          El bucle de repetición,
          Pausa y declaraciones siguientes,
-         Utilizar arreglar(),
          Documentación usando #,
          Reconocer que existe un error,
          Hacer que el error sea reproducible,
