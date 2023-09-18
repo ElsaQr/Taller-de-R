@@ -76,10 +76,122 @@ is.na(m) # [1] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
 x <- c(1,2,3,6,7,8,NA,3)
 mean(x) #resultado NA
 mean(x, na.rm=TRUE # resultado 4.285714    
-#Vectores de caracteres###################################################################################################################
-     
+
+#Vectores de caracteres#########################################################################################
+#El vector de caracteres en R es un vector de tipo carácter que se utiliza para almacenar cadenas y valores NA.
+#EJEMPLO.1
+v<-c('adn','arn','proteina')
+print(v)
+#RESULTADO [1] "adn"  "arn" "proteina" 
+#EJEMPLO.2
+partesdeuncarro<-c('volante','llanta')
+#EJEMPLO.3
+z<-c('azul','verde','rojo',2,3) # juntamos caracteres con números y los números se convierten en caracteres
+#EJEMPL0.4 # substraer datos de los caracteres
+bebidas<-c('jugos','agua','refresco')
+substr(v,1,4) #el 1 es el inicio y el 4 es el numero donde para
+#RESULTADO [1] "jug" "agu" "ref"
+#EJEMPL0.5 # pegar un texto los caracteres
+paste(bebidas, "frias")
+#RESULTADO [1] "jugos frias"    "agua frias"     "refresco frias"
+#EJEMPL0.6 # pegar un texto los caracteres y poner espacios
+paste(bebidas, "frias",sep="")
+#RESULTADO [1] "jugosfrias"    "aguafrias"     "refrescofrias"
+#EJEMPL0.7 # pegar un texto los caracteres, agregar una S y poner espacios
+paste(bebidas,"s", "frias",sep="")
+[1] "jugossfrias"    "aguasfrias"     "refrescosfrias"
+#EJEMPL0.7 # pegar un texto los caracteres y lo hace un caracter
+paste("Ximena quiere ",bebidas, collapse = " "
+[1] "Ximena quiere  jugos Ximena quiere  agua Ximena quiere  refresco"
 #Factores#################################################################################################################################
-#Más sobre la extracción de elementos de vectores#########################################################################################
-#Matrices y arreglos######################################################################################################################
-#marcos de datos##########################################################################################################################
-#Datos y tiempos##########################################################################################################################
+#Un factor es una variable categórica con un número finito de valores o niveles. En R los factores se utilizan habitualmente para realizar clasificaciones de los datos, estableciendo su pertenencia a los grupos o categorías determinados por los niveles del factor.
+#Ejemplo.1
+sexo <- c("M", "H", "H", "H", "M", "H", "M", "M", "H", "M")
+sexo
+sexo <- factor(sexo)
+#RESULTADO    Levels: H M
+#Ejemplo.2
+sexo <- factor(sexo,levels=c("H","M"),labels=c("Hombre","Mujer"))  #Converitimos el H a hombre y M a mujer
+#RESULTADO [1] Mujer  Hombre Hombre Hombre Mujer  Hombre Mujer  Mujer  Hombre Mujer Levels: Hombre Mujer
+ #Ejemplo.3 #enumerar cuanto hay de cada sexo
+ table(sexo)
+# Hombre  Mujer 
+#     5      5 
+#Más sobre la extracción de elementos de vectores###########################################################################
+more.colors <- c(colors, "green", "magenta", "cyan")
+
+#Matrices y arreglos####################################################################################################
+#"Las matrices y arrays pueden ser descritas como vectores multidimensionales. Al igual que un vector, únicamente pueden contener datos de un sólo tipo, pero además de largo, tienen más dimensiones.", Las matrices son de dos dimenciones y los arrays son con más de dos dimensiones
+
+#EJEMPLO.1  #MATRIZ SIN ESPECIFICACIONES
+matrix(1:15)
+#EJEMPLO.2 # Tres renglones y cinco columnas
+matrix(1:12, nrow = 3, ncol = 5)
+#EJEMPLO.3 # 
+la_matriz <- matrix(1:9, nrow = 3, ncol = 3)
+la_matriz+1 
+#EJEMPLO.4 # con valroes especificos
+A=matrix(nrow=3,ncol=3, c(1,2,3,4,5,6,7,8,9))
+#EJEMPLO.4 # Array
+> a <- array(1:24, c(3, 4, 2))
+#DATAFRAMES#######################################################################################################
+#"Los data frames son estructuras de datos de dos dimensiones (rectangulares) que pueden contener datos de diferentes tipos, por lo tanto, son heterogéneas"
+
+# EJEMPLO.1  DATAFRAME
+Data_Frame <- data.frame (
+  entrenamiento = c("Cardio", "Natacion", "tenis"),
+  Pulso = c(100, 130, 120),
+  Duracion = c(60, 30, 25))
+Data_Frame 
+
+# EJEMPLO.2 names() nos permite ver los nombres de las columnas
+names(Data_Frame)
+# EJEMPLO.3  dimenciones, clase y largo
+class(Data_Frame)
+Length(Data_Frame)
+dim(Data_Frame)
+
+#Datos y tiempos##########################################################################################################
+#R dispone en su paquete base de dos clases específicamente diseñadas para tratar con datos de tipo fecha/hora: Date (solo para fechas) y POSIXt (además de la fecha incluye hora y huso horario); esta última clase contiene dos subclases, POSIXct y POSIXlt
+#%d 	día (numérico, de 0 a 31)
+#%a 	día de la semana abreviado a tres letras
+#%A 	día de la semana (nombre completo)
+  	 
+#%m 	mes (numérico de 0 a 12)
+#%b 	mes (nombre abreviado a tres letras)
+#%B 	mes (nombre completo)
+  	 
+#%y 	año (con dos dígitos)
+#%Y 	año (con cuatro dígitos)
+
+
+
+# EJEMPLO.1 # crear una fecha as.Date()
+diademuertos=as.Date("2023-11-01")
+diademuertos
+class(diademuertos)
+# EJEMPLO.2 # crear una fecha as.Date() con otro formato
+> diademuertos=as.Date("01/11/2023",format="%d/%m/%Y")
+# EJEMPLO.3 # cambio de formatos
+navidad=as.Date("2023-12-25")
+as.character(navidad, format="%d %b. %Y")## [1] "25 dic. 2023"
+as.character(navidad, format="%A, %d de %B de %Y")## [1] "miércoles, 25 de diciembre de 2023"
+as.character(navidad, format="%d/%m/%y")## [1] "25/12/23"
+# EJEMPLO.4 # dia del sistemas
+Sys.Date()
+
+##Fecha y hora en la clase POSIXct-Esta clase permite manejar la hora además de la fecha
+fechayhora=as.POSIXct("02/11/1963 22:10:00",format="%d/%m/%Y %H:%M:%S")
+class(fechayhora)
+#diferencia de horas
+as.POSIXct("2013-03-10 08:32:07") - as.POSIXct("2013-03-09 23:55:26")
+#Time difference of 8.611389 hours
+
+
+# Referencias#
+#Angelo Santana & Carmen Nieves Hernández,
+#Departamento de Matemáticas, ULPGC
+
+#Juan Bosco Mendoza Vega 
+#R para principiantes
+      
