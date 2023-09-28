@@ -21,7 +21,7 @@ c*5
 ##[1]  6  8 10 12
 ##Posibles errores : longitud de objeto mayor no es múltiplo de la longitud de uno menor
 
-#Vector de patrón simple##################################################################################################################
+#Sequencias de números##################################################################################################################
 #Existen diversas formas de generar secuencias numéricas. Para lograrlo, tienes la opción de emplea seq y rep
 ##EJEMPLO 1.
 ##la secuencia de números menores a 13 
@@ -101,10 +101,12 @@ paste(bebidas, "frias",sep="")
 paste(bebidas,"s", "frias",sep="")
 [1] "jugossfrias"    "aguasfrias"     "refrescosfrias"
 #EJEMPL0.7 # pegar un texto los caracteres y lo hace un caracter
-paste("Ximena quiere ",bebidas, collapse = " "
+paste("Ximena quiere ",bebidas, collapse = " ")
 [1] "Ximena quiere  jugos Ximena quiere  agua Ximena quiere  refresco"
 #Factores#################################################################################################################################
-#Un factor es una variable categórica con un número finito de valores o niveles. En R los factores se utilizan habitualmente para realizar clasificaciones de los datos, estableciendo su pertenencia a los grupos o categorías determinados por los niveles del factor.
+#Un factor es una variable categórica con un número finito de valores o niveles. 
+#En R los factores se utilizan habitualmente para realizar clasificaciones de los datos,
+#estableciendo su pertenencia a los grupos o categorías determinados por los niveles del factor.
 #Ejemplo.1
 sexo <- c("M", "H", "H", "H", "M", "H", "M", "M", "H", "M")
 sexo
@@ -117,11 +119,12 @@ sexo <- factor(sexo,levels=c("H","M"),labels=c("Hombre","Mujer"))  #Converitimos
  table(sexo)
 # Hombre  Mujer 
 #     5      5 
-#Más sobre la extracción de elementos de vectores###########################################################################
-more.colors <- c(colors, "green", "magenta", "cyan")
 
 #Matrices y arreglos####################################################################################################
-#"Las matrices y arrays pueden ser descritas como vectores multidimensionales. Al igual que un vector, únicamente pueden contener datos de un sólo tipo, pero además de largo, tienen más dimensiones.", Las matrices son de dos dimenciones y los arrays son con más de dos dimensiones
+#"Las matrices y arrays pueden ser descritas como vectores multidimensionales. 
+      Al igual que un vector, únicamente pueden contener datos de un sólo tipo,
+      pero además de largo, tienen más dimensiones.", 
+Las matrices son de dos dimenciones y los arrays son con más de dos dimensiones
 
 #EJEMPLO.1  #MATRIZ SIN ESPECIFICACIONES
 matrix(1:15)
