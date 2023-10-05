@@ -1,7 +1,3 @@
-# VECTORES
-typeof()
-length(x)
-
 
 #Aritmética vectorial##################################################################################################################
 ##En el ámbito de los vectores, se pueden llevar a cabo operaciones matemáticas que incluyen la adición, sustracción y la multiplicación 
@@ -26,7 +22,45 @@ c*5
 ##[1]  6  8 10 12
 ##Posibles errores : longitud de objeto mayor no es múltiplo de la longitud de uno menor
 
-#Sequencias de números##################################################################################################################
+###############################################################################################
+# VECTORES en R
+#c() se usa para crear vectores 
+ine <- c(10,15,12,18)
+nom <- c('sam','eli','eddy','Rod')
+rare <- c(TRUE, TRUE, FALSE, NA)
+dias <- as.Date(c('2010-10-02','2021-3-24','1987-6-14','2018-8-16'))
+
+#ine: vector numérico que almacena los valores numéricos.
+#nom: vector de caracteres que almacena los valores de los caracteres.
+#rare: logical
+#dias: vector de fecha que almacena los valores de fecha.
+
+#Tipo de vector
+typeof(ine) #para identificar que tipo de vector es se usa typeof()
+#longitud de vector
+length(ine) #para saber la longitud se usa length(x)
+#Crear vector con nombre 
+x <- c(C1='A',C2='B',C3='C')
+print(x)
+#crear un vector desde una lista 
+li <- list('A','B','C')
+v <- unlist(li)
+print(v)
+print(typeof(v))
+print(is.vector(v))
+#Vector de ceros
+v <- integer(6)
+print(v)
+#vector con longitud especifica
+v <- character(5)
+print(v)
+#Vector de cualquier tipo
+x <- vector(mode='logical',length=4)
+print(x)
+print(is.vector(x))
+print(typeof(x))
+
+#Vectores de una Sequencias de números##################################################################################################################
 #Existen diversas formas de generar secuencias numéricas. Para lograrlo, tienes la opción de emplea seq y rep
 ##EJEMPLO 1.
 ##la secuencia de números menores a 13 
@@ -108,6 +142,7 @@ paste(bebidas,"s", "frias",sep="")
 #EJEMPL0.7 # pegar un texto los caracteres y lo hace un caracter
 paste("Ximena quiere ",bebidas, collapse = " ")
 [1] "Ximena quiere  jugos Ximena quiere  agua Ximena quiere  refresco"
+     
 #Factores#################################################################################################################################
 #Un factor es una variable categórica con un número finito de valores o niveles. 
 #En R los factores se utilizan habitualmente para realizar clasificaciones de los datos,
