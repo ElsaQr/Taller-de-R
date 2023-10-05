@@ -7,6 +7,7 @@ setwd() #cambiar de directorio
 setwd("/home/elsaqr/Documentos")
 
 #dump() and source()
+#dump()
 ##"También podemos guardar múltiples objetos de una sola vez utilizando la función dump(). Pasaremos como argumento a la función un vector de caracteres con sus nombres."
 #EJEMPLO.1
 x <- "TallerDeR"
@@ -21,24 +22,30 @@ source(file = "data.R")
 > str(y) ##"con la función 'str' consultamos la estructura del objeto"
 
 source("C:/Mis scripts/mi_script.R")
+source("path/to/some/file.R")
 
 #Redirecting R output
 sink()
 sink("solarmean.txt") #Create a file solarmean.txt for output
 
 #EJEMPLO.1
-#sinks the data into connection as text file
-sink("my_first_sink.txt")
-
-#prints numbers from 1 to 20
-for (i in 1:20)
-print(i)
+#
+sink("sink-examp.txt")
+i <- 1:10
+outer(i, i, "*")
 sink()
 
-#exports the data as text file
-sink('export_dataframe.txt')
-airquality
+#EJEMPLO.2
+
+#exports the data as csv file
+sink('export_dataframe.csv')
+edad <- c(22, 34, 29, 25, 30, 33, 31, 27, 25, 25)
+tiempo <- c(14.21, 10.36, 11.89, 13.81, 12.03, 10.99, 12.48, 13.37, 12.29, 11.92)
+sexo <- c("M","H","H","M","M","H","M","M","H","H")
+misDatos <- data.frame(edad,tiempo,sexo)
+print(misDatos)
 sink()
+
 
 
 
