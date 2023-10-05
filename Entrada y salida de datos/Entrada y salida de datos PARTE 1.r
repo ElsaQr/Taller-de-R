@@ -7,7 +7,7 @@ setwd() #cambiar de directorio
 setwd("/home/elsaqr/Documentos")
 
 #dump() and source()
-##"También podemos gravar múltiples objetos de una sola vez utilizando la función dump(). Pasaremos como argumento a la función un vector de caracteres con sus nombres."
+##"También podemos guardar múltiples objetos de una sola vez utilizando la función dump(). Pasaremos como argumento a la función un vector de caracteres con sus nombres."
 #EJEMPLO.1
 x <- "TallerDeR"
 y <- data.frame(a = 3L, b = "a")
