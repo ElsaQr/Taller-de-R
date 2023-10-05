@@ -35,7 +35,7 @@ PARTE II
 PARTE I
 
    Cambiar directorios,
-   Volcado() y fuente(),
+   dump() y source(),
    Redirigir la salida de R,
    
 PARTE II
