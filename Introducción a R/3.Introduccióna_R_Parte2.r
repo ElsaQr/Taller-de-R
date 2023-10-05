@@ -1,3 +1,8 @@
+# VECTORES
+typeof()
+length(x)
+
+
 #Aritmética vectorial##################################################################################################################
 ##En el ámbito de los vectores, se pueden llevar a cabo operaciones matemáticas que incluyen la adición, sustracción y la multiplicación 
 ##EJEMPLO 1. a+b, a = c(4, 0, 3), b = c(-2, 1, 5)
