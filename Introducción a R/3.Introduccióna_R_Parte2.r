@@ -207,14 +207,14 @@ dim(Data_Frame)
 #%y 	año (con dos dígitos)
 #%Y 	año (con cuatro dígitos)
 
-
-
 # EJEMPLO.1 # crear una fecha as.Date()
+
 diademuertos=as.Date("2023-11-01")
 diademuertos
 class(diademuertos)
+
 # EJEMPLO.2 # crear una fecha as.Date() con otro formato
-> diademuertos=as.Date("01/11/2023",format="%d/%m/%Y")
+ diademuertos=as.Date("01/11/2023",format="%d/%m/%Y")
 # EJEMPLO.3 # cambio de formatos
 navidad=as.Date("2023-12-25")
 as.character(navidad, format="%d %b. %Y")## [1] "25 dic. 2023"
@@ -224,7 +224,7 @@ as.character(navidad, format="%d/%m/%y")## [1] "25/12/23"
 Sys.Date()
 
 ##Fecha y hora en la clase POSIXct-Esta clase permite manejar la hora además de la fecha
-fechayhora=as.POSIXct("02/11/1963 22:10:00",format="%d/%m/%Y %H:%M:%S")
+fechayhora=as.POSIXct("12/10/2023 12:20:00",format="%d/%m/%Y %H:%M:%S")
 class(fechayhora)
 #diferencia de horas
 as.POSIXct("2013-03-10 08:32:07") - as.POSIXct("2013-03-09 23:55:26")
