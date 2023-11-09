@@ -12,8 +12,18 @@ library(readr)
 #library(BioGenerics)  #BiocManager::install("BiocGenerics")
 #library(parallel) BiocManager::install("Parallel")
 #importar y hacer las matrices de diferencias 
-
+#################################################################################
+##IMPORTAR archivo FASTA
+#################################################################################
 GNRHR <- import.fasta("_outEGL3392MDSr1.fasta", aa.to.upper = TRUE, gap.to.dash = TRUE)
+
+#aa.to.upper: un valor lógico que indica si los aminoácidos deben convertirse a mayúsculas(VERDADERO) o no (FALSO)
+#gap.to.dash:Un valor lógico que indica si los símbolos de espacio de punto (.) y tilde (∼) debenconvertirse al carácter de guión (-) (VERDADERO) o no (FALSO). El valor predeterminado es VERDADERO.
+
+
+##################################################################################
+
+
 active <- mat.dif(GNRHR , GNRHR )
 mmds(active, pc = 3, group.file = NULL)  #AQUI SALEN LOS VALORES PC
 salida <-mmds(active, pc = 3, group.file = NULL)
