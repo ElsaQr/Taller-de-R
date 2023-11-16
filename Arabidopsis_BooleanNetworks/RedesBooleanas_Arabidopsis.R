@@ -1,4 +1,4 @@
-################################################################################
+###############################################################################
 ######## Mario Gutiérrez Rodríguez ########
 ######## Instituto de Ecología UNAM #######
 ########      Septiembre 2023     #########
@@ -15,9 +15,85 @@ install_github("mar-esther23/boolnet-perturb")
 library(dplyr)
 library(BoolNetPerturb)
 
-#AQUÍ VOY A PONER LA INTRO A PAQUETERÍA BOOLNET
+####################################################################################
+
+# revisa en qué directorio estás:
+getwd() 
+
+# ir a donde queremos estar (ojo con las diagonales / )
+
+setwd()
+
+install.packages("BoolNet") 
+
+# cargar (invocar) la librería
+library(BoolNet) 
+
+# cargar la red
+net <- loadNetwork("red_ejemplo.txt")
+
+net  
+
+# mostrar la red
+plotNetworkWiring(net)
+
+# obtener atractores
+
+attr <- getAttractors(net)
+
+attr  
+
+# mostrar atractores Verde=1 Rojo=o    Buscar como quitar encimado
+
+plotAttractors(attr, drawLegend = T, drawLabels = T)
+
+# perturbar la red
+
+# asumir que el gen c siempre está apagado
+
+mut = getAttractors(net, genesOFF=c(0,0,1)) #NO
+mut=fixGenes(net, "c", 0)
+mut
+mutatract <- getAttractors(mut)
+mutatract
+
+# mostrar atractores con la mutación
+
+plotAttractors(mutatract,drawLegend = F)
+
+# empezamos en (1,0,0) y preguntamos a qué atractor vamos a llegar
+
+getPathToAttractor(net, c(1,0,0)) 
+
+plotStateGraph(attr, piecewise=TRUE)
+
+# nota: actualización asíncrona; fuente de ruido. repetir varias veces y ver si resultados
 
 
+# coinciden con síncrono, para descartar que resultados sean artefactos del método computacional
+
+att_asymchron = getAttractors(net, type="asynchronous") # asynchronament
+
+plotAttractors(att_asymchron)
+
+
+## Ahora veremos qué pasa con un atractor cíclico
+cell_cyle <- loadNetwork("cellcycle.txt")
+
+cell_cyle
+
+# mostrar red
+plotNetworkWiring(cell_cyle)
+
+# obtener atractores
+attrCC <- getAttractors(cell_cyle)
+
+attrCC 
+
+# mostrar atractores
+plotAttractors(attrCC)
+
+#AHORA LA RED DE FLORACIÓN DE ARABIDOPSIS THALIANA
 net = loadNetwork("ATH_flower_cell_fate_determination.net.txt")
 
 # obtener atractores
@@ -30,12 +106,6 @@ plotAttractors(attr)
 
 # ver como depende la diagonal del ruido (p = 0.0, sin ruido)
 EL = epigeneticLandscape(net, p = 0.01)
-
-# ?cu?l es la probabilidad de pasar de un atractor 5
-# al 3 con un valor de p = 0.01?
-EL[5,3]
-
-# tercera parte  #######################################################
 
 # tama?os de las cuencas de atracci?n
 basinsize = seq(1, 10, by=1)
@@ -54,59 +124,3 @@ plot(diag(as.matrix(EL)), basinsize_norm, pch = 20, cex = 1,
      ylab = "tama?o de cuenca normalizado",cex.lab = 0.8,las=0.8)
 lines(x = c(min(diag(as.matrix(EL))), max(diag(as.matrix(EL)))),
       y = c(min(basinsize_norm), max(basinsize_norm)))
-
-# gr?fica entre tama?os de las cuencas y prob de transici?n de atractor 
-# j a atractor 1, j = 1, 2, ..., 10
-# efecto de las transiciones no se atribuye directamente al tama?o de las cuencas
-plot(EL[,1], basinsize_norm, pch = 20, cex = 1, 
-     xlab = "probabilidad de transici?n",
-     ylab = "tama?o de cuenca normalizado", cex.lab = 0.8)
-
-
-
-# parte cuatro #########################################################
-
-# si empiezas en atractor 1 despu?s de 100 pasos cu?l es la probabilidad de
-# permanecer en 1
-
-## simular una cadena de markov, 100 pasos
-P = as.matrix(EL)
-Nsteps <- 100 # number of steps
-pi0 = c(1,0,0,0,0,0,0,0,0,0) # distribuci?n de probabilidad inicial: x(0) =
-v = vector("numeric", Nsteps) # creat un vector vac?o de tama?o (prealocar)
-r = length(pi0) # tama?o para la muestra de la distribuci?n inicial 
-
-v[1] = 1 #sample(r, 1, prob=pi0) 
-# la primer entrada del vector es una muestra de 1,2 r
-# la probabilidd de obtener cada uno de estos elementos est? dada por pi0
-
-# Una sola realizaci?n de la cadena
-for (i in 2:Nsteps){
-  v[i] = sample(r, 1, prob=P[v[i-1],]) # muestrea el nuevo valor: 
-  # selecciona el rengl?n en la matriz de probabilidades que da el vector 
-  # de probabilidad de acuerdo con el estado actual
-}
-
-# mostrar cadena
-matplot(v, type="l", lwd=2.5, col=3,  xlab="t", ylab="Attractor")
-
-## ahora, vamos a iterar varias veces, para sacar el promedio de 
-# las veces que cada atractor fue visitado en cada paso de tiempo,
-# es decir, la probabilidad del atractor i al tiempo N, para i = 1,2,3
-iterations=500
-
-# matriz para guardar las cadenas 
-V = matrix(nrow = iterations, ncol = Nsteps)
-V[,1] = rep(1, iterations)
-
-for (jj in 1:iterations){
-  for (i in 2:Nsteps){
-    V[jj, i] = sample(r, 1, prob=P[v[i-1],]) 
-  }
-}
-
-# probabilidad de estar en atractor 1 al tiempo 75
-mean(V[, 75] == 1)
-
-
-plot(seq(1,100), colMeans(V[,] == 3), type = "l")
